@@ -41,12 +41,28 @@ export default function BlogList() {
     <div className="page">
       {/* Header */}
       <header className="site-header">
-        <div className="header-inner">
-          <div className="logo">
-            <span className="logo-icon">✦</span>
-            <span className="logo-text">DevBlog</span>
+        <div className="header-inner" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div>
+            <div className="logo">
+              <span className="logo-icon">✦</span>
+              <span className="logo-text">DevBlog</span>
+            </div>
+            <p className="header-tagline">Insights for modern developers</p>
           </div>
-          <p className="header-tagline">Insights for modern developers</p>
+          <Link 
+            to="/create" 
+            style={{
+              padding: '0.5rem 1rem',
+              backgroundColor: '#3b82f6',
+              color: 'white',
+              borderRadius: '6px',
+              textDecoration: 'none',
+              fontWeight: '500',
+              fontSize: '0.9rem'
+            }}
+          >
+            + Create Blog
+          </Link>
         </div>
       </header>
 

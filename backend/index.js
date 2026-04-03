@@ -269,6 +269,25 @@ app.get('/api/blogs/:id', (req, res) => {
   res.json(blog);
 });
 
+app.post('/api/blogs', (req, res) => {
+  const { title, slug, summary, content } = req.body;
+  if (!title || !slug || !summary || !content) {
+    return res.status(400).json({ error: 'All fields are required.' });
+  }
+
+  const newBlog = {
+    id: blogs.length + 1,
+    title,
+    slug,
+    summary,
+    content,
+    author: 'Admin',
+    createdAt: new Date().toISOString(),
+  };
+  blogs.push(newBlog);
+  res.status(201).json(newBlog);
+});
+
 // 404 fallback
 app.use((req, res) => {
   res.status(404).json({ error: 'Route not found.' });
