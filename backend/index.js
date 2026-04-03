@@ -1,5 +1,5 @@
-const express = require('express');
-const cors = require('cors');
+const express = require("express");
+const cors = require("cors");
 
 const app = express();
 const PORT = 8080;
@@ -11,12 +11,12 @@ app.use(express.json());
 const blogs = [
   {
     id: 1,
-    title: 'Getting Started with React in 2024',
-    slug: 'getting-started-with-react-2024',
-    author: 'Alice Nguyen',
-    createdAt: '2024-01-15T08:00:00Z',
+    title: "Getting Started with React in 2024",
+    slug: "getting-started-with-react-2024",
+    author: "Alice Nguyen",
+    createdAt: "2024-01-15T08:00:00Z",
     summary:
-      'A comprehensive beginner guide to React — from setting up your first project with Vite to understanding components, JSX, and state management.',
+      "A comprehensive beginner guide to React — from setting up your first project with Vite to understanding components, JSX, and state management.",
     content: `
       <h2>Introduction</h2>
       <p>React is one of the most popular JavaScript libraries for building user interfaces. It was developed by Facebook and has a huge ecosystem that makes it a go-to choice for modern web development.</p>
@@ -43,12 +43,12 @@ npm run dev</code></pre>
   },
   {
     id: 2,
-    title: 'Mastering CSS Flexbox and Grid',
-    slug: 'mastering-css-flexbox-and-grid',
-    author: 'Bob Tran',
-    createdAt: '2024-02-03T09:30:00Z',
+    title: "Mastering CSS Flexbox and Grid",
+    slug: "mastering-css-flexbox-and-grid",
+    author: "Bob Tran",
+    createdAt: "2024-02-03T09:30:00Z",
     summary:
-      'Deep-dive into the two most powerful CSS layout systems — Flexbox and Grid — with real-world examples and visual breakdowns.',
+      "Deep-dive into the two most powerful CSS layout systems — Flexbox and Grid — with real-world examples and visual breakdowns.",
     content: `
       <h2>Why Layout Matters</h2>
       <p>Two decades ago, CSS layout meant floats and clearfixes. Today we have two powerful, purpose-built systems: <strong>Flexbox</strong> and <strong>CSS Grid</strong>.</p>
@@ -82,12 +82,12 @@ npm run dev</code></pre>
   },
   {
     id: 3,
-    title: 'Node.js REST API Design Best Practices',
-    slug: 'nodejs-rest-api-design-best-practices',
-    author: 'Clara Pham',
-    createdAt: '2024-03-10T11:00:00Z',
+    title: "Node.js REST API Design Best Practices",
+    slug: "nodejs-rest-api-design-best-practices",
+    author: "Clara Pham",
+    createdAt: "2024-03-10T11:00:00Z",
     summary:
-      'Learn the best practices for designing clean, scalable, and maintainable REST APIs using Node.js and Express — from routing to error handling.',
+      "Learn the best practices for designing clean, scalable, and maintainable REST APIs using Node.js and Express — from routing to error handling.",
     content: `
       <h2>A Good API Is a Happy API</h2>
       <p>A well-designed REST API is predictable, consistent, and easy to consume. Here are the key principles.</p>
@@ -121,12 +121,12 @@ DELETE /api/blogs/:id → delete a blog</code></pre>
   },
   {
     id: 4,
-    title: 'JavaScript Async/Await Explained',
-    slug: 'javascript-async-await-explained',
-    author: 'David Le',
-    createdAt: '2024-04-22T14:15:00Z',
+    title: "JavaScript Async/Await Explained",
+    slug: "javascript-async-await-explained",
+    author: "David Le",
+    createdAt: "2024-04-22T14:15:00Z",
     summary:
-      'Finally understand Promises, async/await, and how to handle asynchronous JavaScript without callback hell.',
+      "Finally understand Promises, async/await, and how to handle asynchronous JavaScript without callback hell.",
     content: `
       <h2>The Problem with Callbacks</h2>
       <p>Early JavaScript relied on callbacks to handle asynchronous operations. This led to deeply nested, hard-to-read code — often called <em>"callback hell"</em>.</p>
@@ -159,12 +159,12 @@ DELETE /api/blogs/:id → delete a blog</code></pre>
   },
   {
     id: 5,
-    title: 'Introduction to Git and Version Control',
-    slug: 'introduction-to-git-and-version-control',
-    author: 'Emma Hoang',
-    createdAt: '2024-05-08T07:45:00Z',
+    title: "Introduction to Git and Version Control",
+    slug: "introduction-to-git-and-version-control",
+    author: "Emma Hoang",
+    createdAt: "2024-05-08T07:45:00Z",
     summary:
-      'A practical beginner guide to Git — commits, branches, merges, and collaboration workflows with GitHub.',
+      "A practical beginner guide to Git — commits, branches, merges, and collaboration workflows with GitHub.",
     content: `
       <h2>Why Version Control?</h2>
       <p>Version control lets you track changes over time, collaborate with a team, and safely experiment with new features without fear of breaking things.</p>
@@ -195,12 +195,12 @@ git push origin main  # push to GitHub</code></pre>
   },
   {
     id: 6,
-    title: 'Understanding SQL vs NoSQL Databases',
-    slug: 'understanding-sql-vs-nosql-databases',
-    author: 'Frank Dinh',
-    createdAt: '2024-06-19T10:00:00Z',
+    title: "Understanding SQL vs NoSQL Databases",
+    slug: "understanding-sql-vs-nosql-databases",
+    author: "Frank Dinh",
+    createdAt: "2024-06-19T10:00:00Z",
     summary:
-      'Compare SQL (PostgreSQL, MySQL) and NoSQL (MongoDB, Redis) databases — when to use each and their core trade-offs.',
+      "Compare SQL (PostgreSQL, MySQL) and NoSQL (MongoDB, Redis) databases — when to use each and their core trade-offs.",
     content: `
       <h2>The Database Landscape</h2>
       <p>Choosing the right database is a critical architectural decision. The two main categories are <strong>SQL</strong> (relational) and <strong>NoSQL</strong> (non-relational).</p>
@@ -235,32 +235,36 @@ git push origin main  # push to GitHub</code></pre>
 // ─── API Routes ────────────────────────────────────────────────────────────
 
 // GET /api/blogs — return all blogs (summary view)
-app.get('/api/blogs', (req, res) => {
-  const summaries = blogs.map(({ id, title, slug, summary, author, createdAt }) => ({
-    id,
-    title,
-    slug,
-    summary,
-    author,
-    createdAt,
-  }));
+app.get("/api/blogs", (req, res) => {
+  const summaries = blogs.map(
+    ({ id, title, slug, summary, author, createdAt }) => ({
+      id,
+      title,
+      slug,
+      summary,
+      author,
+      createdAt,
+    })
+  );
   res.json(summaries);
 });
 
 // GET /api/blogs/slug/:slug — MUST come before /api/blogs/:id to avoid conflict
-app.get('/api/blogs/slug/:slug', (req, res) => {
+app.get("/api/blogs/slug/:slug", (req, res) => {
   const blog = blogs.find((b) => b.slug === req.params.slug);
   if (!blog) {
-    return res.status(404).json({ error: `Blog with slug "${req.params.slug}" not found.` });
+    return res
+      .status(404)
+      .json({ error: `Blog with slug "${req.params.slug}" not found.` });
   }
   res.json(blog);
 });
 
 // GET /api/blogs/:id — get blog by numeric id
-app.get('/api/blogs/:id', (req, res) => {
+app.get("/api/blogs/:id", (req, res) => {
   const id = parseInt(req.params.id, 10);
   if (isNaN(id)) {
-    return res.status(400).json({ error: 'Blog id must be a number.' });
+    return res.status(400).json({ error: "Blog id must be a number." });
   }
   const blog = blogs.find((b) => b.id === id);
   if (!blog) {
@@ -269,28 +273,9 @@ app.get('/api/blogs/:id', (req, res) => {
   res.json(blog);
 });
 
-app.post('/api/blogs', (req, res) => {
-  const { title, slug, summary, content } = req.body;
-  if (!title || !slug || !summary || !content) {
-    return res.status(400).json({ error: 'All fields are required.' });
-  }
-
-  const newBlog = {
-    id: blogs.length + 1,
-    title,
-    slug,
-    summary,
-    content,
-    author: 'Admin',
-    createdAt: new Date().toISOString(),
-  };
-  blogs.push(newBlog);
-  res.status(201).json(newBlog);
-});
-
 // 404 fallback
 app.use((req, res) => {
-  res.status(404).json({ error: 'Route not found.' });
+  res.status(404).json({ error: "Route not found." });
 });
 
 // Start server
